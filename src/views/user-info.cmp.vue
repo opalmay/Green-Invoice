@@ -52,6 +52,9 @@
 import fancyInput from '../components/fancy-input.cmp.vue';
 import tabGroup from '../components/tab-group.cmp.vue';
 export default {
+	metaInfo: {
+		title: 'פרטים'
+	},
 	data() {
 		return {
 			tabs: [

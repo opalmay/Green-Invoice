@@ -2,8 +2,8 @@
 	<section class="user-welcome">
 		<div class="floating">
 			<div>
-				<h1>שלום {{firstName}}!</h1>
-				<p>ברוך הבא ל-{{bussinesName}}</p>
+				<h1>שלום {{ firstName }}!</h1>
+				<p>ברוך הבא ל-{{ bussinesName }}</p>
 			</div>
 			<div class="flex space-between column">
 				<button class="accept-button" @click="goToInfo">המשך</button>
@@ -15,6 +15,9 @@
 
 <script>
 export default {
+	metaInfo: {
+		title: 'ברוך הבא'
+	},
 	computed: {
 		loggedInUser() {
 			return this.$store.getters.loggedInUser;
@@ -27,10 +30,10 @@ export default {
 		}
 	},
 	methods: {
-		goToInfo(){
+		goToInfo() {
 			this.$router.push('/user/info');
 		},
-		logout(){
+		logout() {
 			this.$store.dispatch({ type: 'logout' });
 			this.$router.push('/login');
 		}

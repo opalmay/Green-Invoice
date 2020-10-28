@@ -10,13 +10,17 @@
 							v-model="credentials.email"
 							placeholder="מייל"
 						/>
-						<div class="email-info">כתובת המייל איתה נרשמת לחשבונית ירוקה</div>
+						<div class="email-info">
+							כתובת המייל איתה נרשמת לחשבונית ירוקה
+						</div>
 						<fancyInput
 							type="password"
 							v-model="credentials.password"
 							placeholder="סיסמה"
 						/>
-						<div class="forgot-password"><a href="#">שכחת סיסמה?</a></div>
+						<div class="forgot-password">
+							<a href="#">שכחת סיסמה?</a>
+						</div>
 					</div>
 					<h3>{{ msg }}</h3>
 					<div class="form-buttons-container flex space-between">
@@ -24,7 +28,8 @@
 						<button
 							class="google-button flex align-center justify-center"
 						>
-							<span>כניסה מהירה</span> <img src="../assets/Google_G.svg" />
+							<span>כניסה מהירה</span>
+							<img src="../assets/Google_G.svg" />
 						</button>
 					</div>
 				</form>
@@ -44,6 +49,9 @@
 import fancyInput from '../components/fancy-input.cmp.vue';
 export default {
 	name: 'login',
+	metaInfo: {
+		title: 'התחברות'
+	},
 	data() {
 		return {
 			credentials: {
@@ -69,7 +77,7 @@ export default {
 		const user = this.$store.getters.loggedinUser;
 		if (user) this.$router.push('/user/welcome');
 	},
-	components:{
+	components: {
 		fancyInput
 	}
 }
