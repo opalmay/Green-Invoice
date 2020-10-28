@@ -29,7 +29,7 @@
 							class="google-button flex align-center justify-center"
 						>
 							<span>כניסה מהירה</span>
-							<img src="../assets/Google_G.svg" />
+							<img src="../assets/img/Google_G.svg" />
 						</button>
 					</div>
 				</form>

@@ -3,7 +3,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import '@/styles/style.scss'
+import '@/assets/styles/style.scss'
 import VueMeta from 'vue-meta'
 
 Vue.config.productionTip = false
