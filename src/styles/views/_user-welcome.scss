@@ -13,10 +13,12 @@
         p {
             font-size: 2rem;
             margin-bottom: 20px;
+            text-align: center;
         }
         button {
             height: 67px;
             font-size: 2rem;
+            max-width: 300px;
             &.accept-button{
                 // width: 50%;
                 margin-bottom: 10px;

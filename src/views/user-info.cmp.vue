@@ -1,6 +1,5 @@
 <template>
 	<section class="user-info flex column justify-center align-center">
-		<div>{{ getTimeOfDayGreeting() }}</div>
 		<div class="tabs">
 			<tabGroup :tabs="tabs" v-model="activeTab" />
 			<div class="tabbed-content">
@@ -66,16 +65,6 @@ export default {
 				}
 			],
 			activeTab: 'details'
-		}
-	},
-	methods: {
-		getTimeOfDayGreeting() {
-			const currHour = new Date().getHours();
-			if (currHour >= 22 || currHour <= 4) return 'לילה טוב!'
-			else if (currHour >= 18) return 'ערב טוב!'
-			else if (currHour >= 16) return 'אחה"צ טובים!'
-			else if (currHour >= 12) return 'צהריים טובים!'
-			else return 'בוקר טוב!'
 		}
 	},
 	computed: {
