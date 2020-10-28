@@ -1,4 +1,4 @@
-# space_tech
+# green_invoice
 
 ## Project setup
 ```

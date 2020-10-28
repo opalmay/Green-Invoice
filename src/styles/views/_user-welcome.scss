@@ -1,0 +1,39 @@
+.user-welcome {
+	background: url(https://cdn.greeninvoice.co.il/public-website/assets/1.0.379/img/8189bf3.jpg);
+	background-position-x: center;
+    background-size: cover;
+    min-height: 100vh;
+	.floating {
+        position: absolute;
+        top: 25%;
+        right: 5%;
+		h1 {
+			font-size: 5rem;
+        }
+        p {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        button {
+            height: 67px;
+            font-size: 2rem;
+            &.accept-button{
+                // width: 50%;
+                margin-bottom: 10px;
+            }
+            &.blue-button{
+                // width: 40%;
+            }
+        }
+    }
+    @media (max-width: 700px) {
+            // background: none;
+            background-position-x: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .floating {
+                position: static;
+            }
+    }
+}

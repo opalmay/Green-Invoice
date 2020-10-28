@@ -1,0 +1,35 @@
+.user-info {
+	position: absolute;
+	top: 68px;
+	border-radius: 2px;
+    // padding: 0 20px;
+    // padding: 0 76px 76px 76px;
+	width: 100%;
+	.tabs {
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		width: 80%;
+	}
+	.tabbed-content {
+		padding: 30px;
+		label {
+			font-size: 0.9rem;
+		}
+		li {
+			width: 50%;
+		}
+	}
+	h3 {
+        font-family: inherit;
+        overflow-wrap: anywhere;
+    }
+    @media (max-width: 500px) {
+        .tabbed-content{
+            li {
+                width: 100%;
+            }
+        }
+        .tabs {
+            width: 100%;
+        }
+    }
+}

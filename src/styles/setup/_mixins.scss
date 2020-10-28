@@ -1,0 +1,47 @@
+@mixin badge($bgcolor) {
+    background-color: $bgcolor;
+    color: white;
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    border-radius: 0.25rem;
+    margin: 2.5px;
+    margin-top: 5px;
+    cursor: default;
+}
+
+@mixin niceScrollBar($width, $color) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $color;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: darken($color, 5);
+    }
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    overflow: hidden;
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: ($height / $width) * 100%;
+    }
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }  
+    > img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }

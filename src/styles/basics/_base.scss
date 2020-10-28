@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    font-family: inherit;
+    outline: none;
+}
+html {
+    // font-size: 17px;
+    background-color: $siteBgc;
+    color: $mainColor;
+    direction: rtl;
+    text-align: right;
+    font-family: 'almoni-neue-dl';
+}
+body {
+    margin: 0;
+}
+
+
+button {
+    font-size: rem(18px);
+    font-weight: bold;
+    line-height: rem(20px);
+    border-radius: 100px;
+    border: 0px;
+    cursor: pointer;
+    text-align: center;
+    // &:hover{
+    //     // background-color: adjust-hue($color: $brandColor, $degrees: -40);    }
+}
+
+input {
+    border: 0;
+    border-bottom: 1px solid $mainColor;
+    // padding: 0 0 10.5px 0;
+    font-size: rem(18px);
+    width: 100%;
+    line-height: rem(22px);
+}
+
+a {
+    color: $blue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Almoni-Tzar-Bold';
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-size: rem(56px);
+    line-height: rem(48px);
+}
