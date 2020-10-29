@@ -6,7 +6,7 @@
 				<form @submit.prevent="login">
 					<div class="form-top">
 						<fancyInput
-							type="text"
+							type="email"
 							v-model="credentials.email"
 							placeholder="מייל"
 						/>
@@ -24,7 +24,9 @@
 					</div>
 					<h3>{{ msg }}</h3>
 					<div class="form-buttons-container flex space-between">
-						<button class="accept-button" :disabled="loading">כניסה</button>
+						<button class="accept-button" :disabled="disableForm">
+							כניסה
+						</button>
 						<button
 							class="google-button flex align-center justify-center"
 							type="button"
@@ -61,19 +63,26 @@ export default {
 			msg: '',
 		}
 	},
+	computed: {
+		disableForm() {
+			return this.loading || !this.validEmail(this.credentials.email) || !this.credentials.password
+		}
+	},
 	methods: {
 		async login() {
 			this.loading = true;
-			const cred = this.credentials;
-			if (!cred.email || !cred.password) return this.msg = 'יש להכניס מייל וסיסמה';
 			try {
-				await this.$store.dispatch({ type: 'login', userCred: cred });
+				await this.$store.dispatch({ type: 'login', userCred: this.credentials });
 				this.$router.push('/user/welcome');
 			} catch (err) {
 				this.msg = err;
 			}
 			this.loading = false;
 		},
+		validEmail(email) {
+			var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(email);
+		}
 	},
 	components: {
 		fancyInput
