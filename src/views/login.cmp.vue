@@ -24,9 +24,10 @@
 					</div>
 					<h3>{{ msg }}</h3>
 					<div class="form-buttons-container flex space-between">
-						<button class="accept-button">כניסה</button>
+						<button class="accept-button" :disabled="loading">כניסה</button>
 						<button
 							class="google-button flex align-center justify-center"
+							type="button"
 						>
 							<span>כניסה מהירה</span>
 							<img src="../assets/img/Google_G.svg" />
@@ -56,11 +57,13 @@ export default {
 				email: 'opal.mizrahi2@gmail.com',
 				password: 'opal1234',
 			},
+			loading: false,
 			msg: '',
 		}
 	},
 	methods: {
 		async login() {
+			this.loading = true;
 			const cred = this.credentials;
 			if (!cred.email || !cred.password) return this.msg = 'יש להכניס מייל וסיסמה';
 			try {
@@ -69,6 +72,7 @@ export default {
 			} catch (err) {
 				this.msg = err;
 			}
+			this.loading = false;
 		},
 	},
 	components: {

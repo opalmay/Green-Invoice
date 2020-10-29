@@ -107,6 +107,9 @@
 	&:hover {
 		background-color: scale-color($color: $brandColor, $lightness: -10%);
 	}
+	&:disabled {
+		background-color: #75a181;
+	}
 }
 .blue-button {
 	background-color: $blue;
