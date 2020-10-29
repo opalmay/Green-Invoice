@@ -7,7 +7,7 @@
 			</div>
 			<div class="flex space-between column">
 				<button class="accept-button" @click="goToInfo">המשך</button>
-				<button class="blue-button" @click="logout">התנתקות</button>
+				<button class="blue-button" @click="logout">התנתק</button>
 			</div>
 		</div>
 	</section>
@@ -37,9 +37,6 @@ export default {
 			this.$store.dispatch({ type: 'logout' });
 			this.$router.push('/login');
 		}
-	},
-	created() {
-		if (!this.loggedInUser) this.$router.push('/login');
 	}
 }
 </script>

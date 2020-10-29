@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<section class="site-container">
+		<section class="main-app">
 			<appHeader />
 			<router-view />
 		</section>
@@ -10,7 +10,7 @@
 import appHeader from '@/components/app-header.cmp.vue'
 export default {
 	metaInfo: {
-		titleTemplate: 'חשבונית ירוקה - %s'
+		titleTemplate: 'חשבונית ירוקה | %s'
 	},
 	components: {
 		appHeader

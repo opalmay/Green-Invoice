@@ -39,9 +39,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="hero">
-			<!-- <img src="../assets/green_login_page.svg" /> -->
-		</div>
+		<div class="hero"></div>
 	</section>
 </template>
 
@@ -72,10 +70,6 @@ export default {
 				this.msg = err;
 			}
 		},
-	},
-	created() {
-		const user = this.$store.getters.loggedinUser;
-		if (user) this.$router.push('/user/welcome');
 	},
 	components: {
 		fancyInput

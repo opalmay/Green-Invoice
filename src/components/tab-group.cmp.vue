@@ -5,11 +5,9 @@
 				v-for="tab in tabs"
 				:key="tab.key"
 				:class="{ selected: tab.key === selectedTab }"
+				@click="changeTab(tab.key)"
 			>
-				<input :id="tab.key" type="radio" @click="changeTab(tab.key)" />
-				<label :for="tab.key"
-					><div>{{ tab.label }}</div></label
-				>
+				<div>{{ tab.label }}</div>
 			</li>
 		</ul>
 	</div>
@@ -22,7 +20,7 @@ export default {
 	},
 	data() {
 		return {
-			'selectedTab': this.tabs[0].key
+			selectedTab: this.tabs[0].key
 		}
 	},
 	methods: {
@@ -49,22 +47,18 @@ ul {
 }
 li {
 	flex-grow: 1;
-	&.selected {
-		color: #18c746;
-		border-bottom: 2px solid #18c746;
-	}
-}
-label {
+	transition: color 0.2s;
 	text-align: center;
 	cursor: pointer;
 	display: block;
 	width: 100%;
 	height: 100%;
+	&.selected {
+		color: #18c746;
+		border-bottom: 2px solid #18c746;
+	}
 	div {
 		padding: 15px 10px;
 	}
-}
-input {
-	display: none;
 }
 </style>

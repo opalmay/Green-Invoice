@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import { userService } from '../services/user.service.js';
 Vue.use(Vuex);
+
 export const userStore = {
     state: {
         loggedinUser: null
@@ -23,7 +24,6 @@ export const userStore = {
             return user;
         },
         async logout(context) {
-            await userService.logout();
             context.commit({ type: 'setUser', user: null });
         },
     },

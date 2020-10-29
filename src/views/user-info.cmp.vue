@@ -1,5 +1,6 @@
 <template>
-	<section class="user-info flex column justify-center align-center">
+	<section class="user-info">
+		<div class="container flex justify-center">
 		<div class="tabs">
 			<tabGroup :tabs="tabs" v-model="activeTab" />
 			<div class="tabbed-content">
@@ -44,6 +45,7 @@
 					</ul>
 				</template>
 			</div>
+		</div>
 		</div>
 	</section>
 </template>
@@ -104,9 +106,6 @@ export default {
 		bussinesLastUpdateDate() {
 			return new Date(this.bussines.lastUpdateDate * 1000).toDateString();
 		}
-	},
-	created() {
-		if (!this.loggedInUser) this.$router.push('/login');
 	},
 	components: {
 		fancyInput,

@@ -24,14 +24,11 @@ button {
     border: 0px;
     cursor: pointer;
     text-align: center;
-    // &:hover{
-    //     // background-color: adjust-hue($color: $brandColor, $degrees: -40);    }
 }
 
 input {
     border: 0;
     border-bottom: 1px solid $mainColor;
-    // padding: 0 0 10.5px 0;
     font-size: rem(18px);
     width: 100%;
     line-height: rem(22px);

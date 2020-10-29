@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<input
-			ref="input"
 			:type="type"
 			@input="updateText($event.target.value)"
 			@focus="isInFocus = true"
